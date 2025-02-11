@@ -14,10 +14,12 @@ const DarkMode = () => {
   }, []);
   if (!mounted) return null;
 
+  // !data-[state=on]:
+
   return (
     <div className="flex flex-col justify-center items-start gap-2 space-x-2">
       <Toggle
-        className="!data-[state=on]:bg-transparent p-2"
+        className="data-[state=on]:bg-transparent !data-[state=on]:hover:bg-transparent bg-transparent hover:bg-transparent hover:text-accent-foreground"
         aria-label="Toggle theme"
         pressed={theme === "dark"}
         onPressedChange={() => {
@@ -35,3 +37,5 @@ const DarkMode = () => {
 };
 
 export default DarkMode;
+
+//bg-transparent hover:bg-transparent hover:text-accent-foreground
